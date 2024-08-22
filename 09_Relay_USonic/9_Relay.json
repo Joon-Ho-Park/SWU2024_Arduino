@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "박준호",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -162.6, "left": -442.2, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -259, "left": -422.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -310.8,
+      "left": -197.4,
+      "attrs": { "color": "blue", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -274.15,
+      "left": -260.6,
+      "rotate": 180,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -331.75,
+      "left": -260.6,
+      "rotate": 180,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -368.4,
+      "left": -197.4,
+      "attrs": { "color": "red", "flip": "1" }
+    }
+  ],
+  "connections": [
+    [ "uno:12", "relay1:IN", "orange", [ "v-28.8", "h-172.3", "v-38.2" ] ],
+    [ "relay1:NO", "r5:2", "green", [ "h0" ] ],
+    [ "led5:A", "r5:1", "green", [ "v0" ] ],
+    [ "relay1:GND", "uno:GND.1", "black", [ "h-19.2", "v57.2", "h114.9" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-38.4", "v297.6", "h178.6" ] ],
+    [ "relay1:COM", "uno:5V", "red", [ "h154.8", "v286.6", "h-128.6" ] ],
+    [ "led5:C", "uno:GND.3", "green", [ "h57.2", "v345.6", "h-148" ] ],
+    [ "relay1:NC", "r1:2", "green", [ "h30", "v-126" ] ],
+    [ "r1:1", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "uno:GND.3", "green", [ "h86", "v422.4", "h-176.8" ] ]
+  ],
+  "dependencies": {}
+}

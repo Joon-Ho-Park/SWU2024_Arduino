@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Restan Requina",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 2.67, "left": -4, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 54.4,
+      "left": 322.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell2",
+      "top": -131.8,
+      "left": 175.4,
+      "attrs": { "type": "5kg" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -144.6,
+      "left": 31.8,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.3", "lcd1:GND", "black", [ "v36.23", "h113", "v-144" ] ],
+    [ "uno:5V", "lcd1:VCC", "red", [ "v26.63", "h141.6", "v-124.9" ] ],
+    [ "uno:A5", "lcd1:SCL", "#8f4814", [ "v45.83", "h55.7", "v-125.1" ] ],
+    [ "uno:A4", "lcd1:SDA", "orange", [ "v55.43", "h74.8", "v-144.2" ] ],
+    [ "uno:GND.1", "cell2:GND", "black", [ "v0" ] ],
+    [ "uno:3", "cell2:SCK", "green", [ "v-21.27", "h-69.4", "v-76" ] ],
+    [ "uno:2", "cell2:DT", "green", [ "v-30.87", "h-88.5", "v-76.3" ] ],
+    [ "uno:5V", "cell2:VCC", "red", [ "v26.63", "h-184.8", "v-297.6" ] ],
+    [ "uno:13", "btn1:1.r", "orange", [ "v-59.67", "h-44.2" ] ],
+    [ "uno:GND.1", "btn1:2.l", "black", [ "v-30.87", "h-101.9", "v-139.86", "h48.2" ] ]
+  ],
+  "dependencies": {}
+}
